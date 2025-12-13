@@ -1,0 +1,41 @@
+MODULE main
+VAR
+    x_axis: 0..9;
+    y_axis: 0..9;
+INIT
+    x_axis = 0 & y_axis = 0
+TRANS
+    (!(x_axis = 0) & next(x_axis) = x_axis - 1 & next(y_axis) = y_axis) | 
+    (!(y_axis = 0) & next(x_axis) = x_axis & next(y_axis) = y_axis - 1) | 
+    (!(x_axis = 8) & next(x_axis) = x_axis + 1 & next(y_axis) = y_axis) | 
+    (!(y_axis = 8) & next(x_axis) = x_axis & next(y_axis) = y_axis + 1) |
+    (next(x_axis) = x_axis & next(y_axis) = y_axis)
+INVAR
+    !(x_axis = 1 & y_axis = 3) & 
+    !(x_axis = 1 & y_axis = 5) & 
+    !(x_axis = 1 & y_axis = 6) & 
+    !(x_axis = 1 & y_axis = 8) & 
+    !(x_axis = 1 & y_axis = 9) & 
+    !(x_axis = 2 & y_axis = 6) & 
+    !(x_axis = 2 & y_axis = 8) &
+    !(x_axis = 2 & y_axis = 9) & 
+    !(x_axis = 3 & y_axis = 1) & 
+    !(x_axis = 3 & y_axis = 4) & 
+    !(x_axis = 3 & y_axis = 5) & 
+    !(x_axis = 3 & y_axis = 6) & 
+    !(x_axis = 3 & y_axis = 8) & 
+    !(x_axis = 4 & y_axis = 5) & 
+    !(x_axis = 4 & y_axis = 6) & 
+    !(x_axis = 4 & y_axis = 9) & 
+    !(x_axis = 5 & y_axis = 0) & 
+    !(x_axis = 5 & y_axis = 4) & 
+    !(x_axis = 6 & y_axis = 3) & 
+    !(x_axis = 6 & y_axis = 4) & 
+    !(x_axis = 6 & y_axis = 6) & 
+    !(x_axis = 7 & y_axis = 4) & 
+    !(x_axis = 7 & y_axis = 6) & 
+    !(x_axis = 8 & y_axis = 5) & 
+    !(x_axis = 8 & y_axis = 6) & 
+    !(x_axis = 9 & y_axis = 1)
+HLTLSPEC
+    forall A. exists B. !((F (x_axis[A] = 7 & y_axis[A] = 5)) & (G ((x_axis[B] = 7 & y_axis[B] = 5) -> (x_axis[A] = 7 & y_axis[A] = 5))))
