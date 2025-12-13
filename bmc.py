@@ -1161,13 +1161,16 @@ if __name__ == "__main__":
                     form = Implies(behavior(state[t], loop[t], init, trans, invar), expr)
                     expr = ForAll([loop[t]] + [l for j in range(K) for l in state[t][j].values()], form)
             s.add(expr)
-            if s.check() == sat:
+            r = s.check()
+            if r == sat:
+                print(r)
                 print("Counterexample found:")
                 model = s.model()
                 for i in range(first_exists):
                     print(f"* Trace {module.hltlspec_expr.vars[i]} *")
                     print_trace(model,state[module.hltlspec_expr.vars[i]],loop[module.hltlspec_expr.vars[i]],K)
             else:
+                print(r)
                 print("No counterexample found.")
 
         except SyntaxError as e:
