@@ -8,7 +8,7 @@ The user specifies the exact length of the traces to be checked. Since we assume
 
 HyperLoop is implemented in Python and translates the model and the HyperLTL property into a set of constraints using quantifiers that are solved using the Z3 SMT solver. Unlike other existing bounded model checkers for HyperLTL (namely [HyperRUSTY](https://github.com/HyperQB/HyperRUSTY/)), HyperLoop fully supports loop conditions so the results are complete for the given trace length.
 
-The model should be defined in the [SMV language](https://nusmv.fbk.eu) and the HyperLTL property shpuld be specified in a new `HLTLSPEC` section of the SMV file. For the moment HyperLoop only support declarative models defined using the `INIT`, `TRANS`, and `INVAR` sections.
+The model should be defined in the [SMV language](https://nusmv.fbk.eu) and the HyperLTL property should be specified in a new `HLTLSPEC` section of the SMV file. For the moment, HyperLoop only support declarative models defined using the `INIT`, `TRANS`, and `INVAR` sections. For most examples, this actually results in more concise models than using explicit models defined with the `ASSIGN` section.
 
 ## Usage
 
