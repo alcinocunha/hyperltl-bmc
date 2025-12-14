@@ -12,7 +12,7 @@ The model should be defined in the [SMV language](https://nusmv.fbk.eu) and the 
 
 ## Usage
 
-To run HyperLoop, use the following command:
+To run HyperLoop, you must first install Z3 with `pip install z3-solver` and then execute the following command:
 
 ```bash
 python HyperLoop.py <model_file.smv> <trace_length>
