@@ -1,4 +1,4 @@
--- Similar to the same example in HyperRUSTY, but simpler due to the use of TRANS and INVAR
+-- Similar to the same example in HyperQB 2.0, but simpler due to the use of TRANS and INVAR
 -- The robot strategy seems to be more restricted in their example
 MODULE main
 VAR

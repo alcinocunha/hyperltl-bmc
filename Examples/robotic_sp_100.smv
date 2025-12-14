@@ -1,4 +1,4 @@
--- Similar to the same example in HyperRUSTY, but simpler due to the use of TRANS and INVAR
+-- Similar to the same example in HyperQB 2.0, but simpler due to the use of TRANS and INVAR
 MODULE main
 VAR
     x_axis: 0..9;
