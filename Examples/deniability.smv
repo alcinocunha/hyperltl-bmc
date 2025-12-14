@@ -1,0 +1,22 @@
+-- From HyperQB 2.0 examples, without halt and with debits_amount as frozen variable
+MODULE main
+FROZENVAR
+    debits_amount: 1..10;    
+VAR
+	PC: 1..6;
+    num_itr: 0..11;
+    init_balance: 0..20;
+INIT
+    PC = 1
+TRANS
+    (PC = 1 & next(PC) = 2 & next(num_itr) = 0 & next(init_balance) = init_balance & next(debits_amount) = debits_amount) |
+    (PC = 2 & init_balance > debits_amount & next(PC) = 3 & next(num_itr) = num_itr & next(init_balance) = init_balance & next(debits_amount) = debits_amount) |
+    (PC = 2 & init_balance <= debits_amount & next(PC) = 5 & next(num_itr) = num_itr & next(init_balance) = init_balance & next(debits_amount) = debits_amount) |
+    (PC = 3 & next(PC) = 4 & next(num_itr) = num_itr & next(init_balance) = init_balance - debits_amount & next(debits_amount) = debits_amount) |
+    (PC = 4 & num_itr < 11 & next(PC) = 2 & next(num_itr) = num_itr + 1 & next(init_balance) = init_balance & next(debits_amount) = debits_amount) |
+    (PC = 4 & num_itr >= 11 & next(PC) = 2 & next(num_itr) = num_itr & next(init_balance) = init_balance & next(debits_amount) = debits_amount) |
+    (PC = 5 & next(PC) = 6 & next(num_itr) = num_itr & next(init_balance) = init_balance & next(debits_amount) = debits_amount) |
+    (PC = 6 & next(PC) = 6 & next(num_itr) = num_itr & next(init_balance) = init_balance & next(debits_amount) = debits_amount)
+HLTLSPEC
+    forall A . exists B . exists C .
+        G (debits_amount[A] = debits_amount[B] & debits_amount[A] = debits_amount[C] & !(init_balance[B] = init_balance[C]))
