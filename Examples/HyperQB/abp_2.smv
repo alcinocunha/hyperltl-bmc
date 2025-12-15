@@ -1,0 +1,20 @@
+MODULE main
+VAR
+    b_state : 1..14;
+INIT
+    b_state = 1
+TRANS
+    (b_state = 1 & (next(b_state)=2 | next(b_state)=3 | next(b_state)=4 | next(b_state)=9 | next(b_state)=10 | next(b_state)=11 | next(b_state)=12 | next(b_state)=13 | next(b_state)=14)) |
+    (b_state = 2 & (next(b_state)=1 | next(b_state)=9 | next(b_state)=10 | next(b_state)=11 | next(b_state)=12 | next(b_state)=13 | next(b_state)=14)) |
+    (b_state = 3 & (next(b_state)=1 | next(b_state)=9 | next(b_state)=10 | next(b_state)=11 | next(b_state)=12 | next(b_state)=13 | next(b_state)=14)) |
+    (b_state = 4 & (next(b_state)=5 | next(b_state)=9 | next(b_state)=10 | next(b_state)=11 | next(b_state)=12 | next(b_state)=13 | next(b_state)=14)) |
+    (b_state = 5 & (next(b_state)=6 | next(b_state)=7 | next(b_state)=8 | next(b_state)=9 | next(b_state)=10 | next(b_state)=11 | next(b_state)=12 | next(b_state)=13 | next(b_state)=14)) |
+    (b_state = 6 & (next(b_state)=5 | next(b_state)=9 | next(b_state)=10 | next(b_state)=11 | next(b_state)=12 | next(b_state)=13 | next(b_state)=14)) |
+    (b_state = 7 & (next(b_state)=5 | next(b_state)=9 | next(b_state)=10 | next(b_state)=11 | next(b_state)=12 | next(b_state)=13 | next(b_state)=14)) |
+    (b_state = 8 & (next(b_state)=1 | next(b_state)=9 | next(b_state)=10 | next(b_state)=11 | next(b_state)=12 | next(b_state)=13 | next(b_state)=14)) |
+    (b_state = 9 & (next(b_state)=10 | next(b_state)=1 | next(b_state)=2 | next(b_state)=3 | next(b_state)=4 | next(b_state)=5 | next(b_state)=6 | next(b_state)=7 | next(b_state)=8)) |
+    (b_state = 10 & (next(b_state)=11 | next(b_state)=12 | next(b_state)=1 | next(b_state)=2 | next(b_state)=3 | next(b_state)=4 | next(b_state)=5 | next(b_state)=6 | next(b_state)=7 | next(b_state)=8)) |
+    (b_state = 11 & (next(b_state)=10 | next(b_state)=1 | next(b_state)=2 | next(b_state)=3 | next(b_state)=4 | next(b_state)=5 | next(b_state)=6 | next(b_state)=7 | next(b_state)=8)) |
+    (b_state = 12 & (next(b_state)=13 | next(b_state)=1 | next(b_state)=2 | next(b_state)=3 | next(b_state)=4 | next(b_state)=5 | next(b_state)=6 | next(b_state)=7 | next(b_state)=8)) |
+    (b_state = 13 & (next(b_state)=14 | next(b_state)=9 | next(b_state)=1 | next(b_state)=2 | next(b_state)=3 | next(b_state)=4 | next(b_state)=5 | next(b_state)=6 | next(b_state)=7 | next(b_state)=8)) |
+    (b_state = 14 & (next(b_state)=13 | next(b_state)=5 | next(b_state)=1 | next(b_state)=2 | next(b_state)=3 | next(b_state)=4 | next(b_state)=6 | next(b_state)=7 | next(b_state)=8))

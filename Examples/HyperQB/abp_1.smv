@@ -1,0 +1,17 @@
+MODULE main
+VAR
+    a_state : 1..11;
+INIT
+    a_state = 1
+TRANS
+    (a_state = 1 & next(a_state) = 2) |
+    (a_state = 2 & next(a_state) = 3) |
+    (a_state = 3 & next(a_state) = 4) |
+    (a_state = 4 & next(a_state) = 5) |
+    (a_state = 5 & (next(a_state) = 6 | next(a_state) = 7 | next(a_state) = 8)) |
+    (a_state = 6 & next(a_state) = 5) |
+    (a_state = 7 & next(a_state) = 5) |
+    (a_state = 8 & next(a_state) = 9) |
+    (a_state = 9 & (next(a_state) = 10 | next(a_state) = 11)) |
+    (a_state = 10 & next(a_state) = 5) |
+    (a_state = 11 & next(a_state) = 1)
