@@ -1,0 +1,1 @@
+Forall A . Exists B . G (pc_0[A] = pc_1[B] & pc_1[A] = pc_0[B])

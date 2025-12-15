@@ -1,0 +1,1 @@
+Forall A . G !(pc_0[A] = 4 & pc_1[A] = 4 & pc_2[A] = 4)
