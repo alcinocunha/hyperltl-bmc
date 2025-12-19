@@ -1,6 +1,6 @@
 # Isolation
 
-This example illustrates how hyper-properties can be used to verify if two transactional isolation levels are equivalent.
+This example illustrates how hyper-properties can be used to verify if a transactional isolation level is stronger than another.
 
 Given a desired scope for the number of transactions, the number of database keys, and the number of possible values, scripts `isolation_rc.py` and `isolation_ser.py` generate declarative SMV models that describe the behavior of a database working in the *Read Committed* and *Serializability* isolation level, respectively. Both these models formalize these isolation levels according to the definitions of [Seeing is Believing: A Client-Centric Specification of Database Isolation](https://doi.org/10.1145/3087801.3087802). Scripts `isolation_rc_assigns.py` and `isolation_ser_assigns.py` generates equivalent models using explicit assignments.
 
