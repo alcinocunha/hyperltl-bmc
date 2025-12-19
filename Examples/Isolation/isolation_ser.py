@@ -4,7 +4,7 @@ import itertools
 if __name__ == "__main__":
     # check command line arguments
     if len(sys.argv) != 4:
-        print("Usage: python isolation.py <transactions> <keys> <values>")
+        print("Usage: python isolation_ser.py <transactions> <keys> <values>")
         sys.exit(1)
 
     T = int(sys.argv[1])  # number of transactions
