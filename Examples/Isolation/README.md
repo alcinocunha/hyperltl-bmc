@@ -10,9 +10,9 @@ In particular, for all executions satisfying one isolation level where all trans
 
 Script `equivalence.py` generates a HyperLTL property that can be used to check the equivalence between the declarative and explicit assignment models.
 
-## Example analysis
+## Example analyses
 
-| Command     | Expected result |
+| Command     | Result          |
 |-------------|-----------------|
 | `python HyperLasso.py isolation_3x2x2.hq 3 isolation_rc_3x2x2.smv isolation_ser_3x2x2.smv` | SAT |
 | `python HyperLasso.py isolation_3x2x2.hq 4 isolation_rc_3x2x2.smv isolation_ser_3x2x2.smv` | SAT |
