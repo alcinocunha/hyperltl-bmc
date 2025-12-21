@@ -3,7 +3,7 @@ import sys
 if __name__ == "__main__":
     # check command line arguments
     if len(sys.argv) != 3:
-        print("Usage: python cms.py <reviewers> <articles>")
+        print("Usage: python cms_any_paper.py <reviewers> <articles>")
         sys.exit(1)
 
     R = int(sys.argv[1])  # number of reviewers
